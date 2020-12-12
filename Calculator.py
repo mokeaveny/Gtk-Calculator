@@ -30,6 +30,14 @@ class CalculatorWindow(Gtk.Window):
         numButton9 = Gtk.Button.new_with_label("3")
         numButton10 = Gtk.Button.new_with_label("0")
 
+        # Create all the operation buttons
+        operationButton1 = Gtk.Button.new_with_label("+")
+        operationButton2 = Gtk.Button.new_with_label("-")
+        operationButton3 = Gtk.Button.new_with_label(chr(247))
+        operationButton4 = Gtk.Button.new_with_label("*")
+        operationButton5 = Gtk.Button.new_with_label("=")
+        operationButton6 = Gtk.Button.new_with_label("CLEAR")
+
         # Add the number display to the grid, set to column and row 0. Width of 3 and height of 1
         grid.attach(displayFrame, 0, 0, 3, 1)
         # Add the buttons to the grid
@@ -44,7 +52,14 @@ class CalculatorWindow(Gtk.Window):
         grid.attach_next_to(numButton7, numButton4, Gtk.PositionType.BOTTOM, 1, 1)
         grid.attach_next_to(numButton8, numButton5, Gtk.PositionType.BOTTOM, 1, 1)
         grid.attach_next_to(numButton9, numButton6, Gtk.PositionType.BOTTOM, 1, 1)
-        grid.attach_next_to(numButton10, numButton9, Gtk.PositionType.BOTTOM, 1, 1)
+        grid.attach_next_to(numButton10, numButton7, Gtk.PositionType.BOTTOM, 1, 1)
+        # Sets the operation buttons to the intended positions
+        grid.attach_next_to(operationButton1, numButton8, Gtk.PositionType.BOTTOM, 1, 1)
+        grid.attach_next_to(operationButton5, numButton9, Gtk.PositionType.BOTTOM, 1, 1)
+        grid.attach_next_to(operationButton4, numButton10, Gtk.PositionType.BOTTOM, 1, 1)
+        grid.attach_next_to(operationButton2, operationButton1, Gtk.PositionType.BOTTOM, 1, 1)
+        grid.attach_next_to(operationButton3, operationButton5, Gtk.PositionType.BOTTOM, 1, 1)
+        grid.attach_next_to(operationButton6, operationButton2, Gtk.PositionType.BOTTOM, 1, 1)
 
 win = CalculatorWindow()
 win.connect("destroy", Gtk.main_quit)
