@@ -274,7 +274,7 @@ class CalculatorWindow(Gtk.Window):
             print("No second number has been selected")
         else:
             if (self.operator == "+"):
-                result = int(self.firstNumber) + int(self.secondNumber)
+                result = float(self.firstNumber) + float(self.secondNumber)
                 self.firstNumber = str(result)
                 self.displayLabel.set_text(self.firstNumber)
                 # Once the calculation has been performed and output then set the operator and secondNumber to blank
@@ -282,21 +282,21 @@ class CalculatorWindow(Gtk.Window):
                 self.secondNumber = ""
 
             elif (self.operator == "-"):
-                result = int(self.firstNumber) - int(self.secondNumber)
+                result = float(self.firstNumber) - float(self.secondNumber)
                 self.firstNumber = str(result)
                 self.displayLabel.set_text(self.firstNumber)
                 self.operator = ""
                 self.secondNumber = ""
 
             elif (self.operator == "/"):
-                result = int(self.firstNumber) / int(self.secondNumber)
+                result = float(self.firstNumber) / float(self.secondNumber)
                 self.firstNumber = str(result)
                 self.displayLabel.set_text(self.firstNumber)
                 self.operator = ""
                 self.secondNumber = ""
 
             elif (self.operator == "*"):
-                result = int(self.firstNumber) * int(self.secondNumber)
+                result = float(self.firstNumber) * float(self.secondNumber)
                 self.firstNumber = str(result)
                 self.displayLabel.set_text(self.firstNumber)
                 self.operator = ""
